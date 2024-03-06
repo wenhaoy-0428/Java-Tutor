@@ -14,6 +14,7 @@
 - [ ] Classes II
   - [ ]  Inheritance
   - [ ]  Polymorphism
+- [ ] Debugger
 
 ## Linux
 
