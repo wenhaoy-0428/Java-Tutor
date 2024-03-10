@@ -4,14 +4,15 @@
 - [x] Intro to background
 - [ ] Basics
   - [x] DataType
-  - [ ] if_else
+  - [x] if_else
   - [ ] Loop
 - [x] Classes Intro
-  - [ ] Packages
-  - [ ] Modifiers
+  - [x] Packages
+  - [x] Modifiers
 - [ ] DataStructure
   - [ ] Array
 - [ ] Classes II
+  - [ ]  Modifier: static
   - [ ]  Inheritance
   - [ ]  Polymorphism
 - [ ] Debugger
@@ -20,6 +21,10 @@
 
 ## Computer Architecture
 
+- [ ] shell
+- [ ] Registers
+- [ ] OpCode
+- [ ] Memory
 
 
 # Resources
