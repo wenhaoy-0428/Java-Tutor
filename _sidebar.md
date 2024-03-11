@@ -1,0 +1,1 @@
+- [Lecture 1](./Lecture_1/notes.md)
