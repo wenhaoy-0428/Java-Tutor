@@ -5,7 +5,7 @@
 - [ ] Basics
   - [x] DataType
   - [x] if_else
-  - [ ] Loop
+  - [x] Loop
 - [x] Classes Intro
   - [x] Packages
   - [x] Modifiers
@@ -21,7 +21,7 @@
 
 ## Computer Architecture
 
-- [ ] shell
+- [x] shell
 - [ ] Registers
 - [ ] OpCode
 - [ ] Memory
