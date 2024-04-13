@@ -2,18 +2,21 @@
 
 ## Java
 - [x] Intro to background
-- [ ] Basics
+- [x] Basics
   - [x] DataType
   - [x] if_else
   - [x] Loop
+  - [ ] Overloading
 - [x] Classes Intro
   - [x] Packages
   - [x] Modifiers
-- [ ] DataStructure
-  - [ ] Array
+- [x] DataStructure
+  - [x] Array
+
 - [ ] Classes II
   - [ ]  Modifier: static
   - [ ]  Inheritance
+  - [ ]  Abstract
   - [ ]  Polymorphism
 - [ ] Debugger
 
