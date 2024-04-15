@@ -1,2 +1,6 @@
 - [Lecture 1](./Lecture_1/notes.md)
 - [Lecture 2](./Lecture_2/notes.md)
+- [Lecture 3](./Lecture_3/notes.md)
+- [Lecture 4](./Lecture_4/notes.md)
+- [Lecture 5](./Lecture_5/notes.md)
+- [Lecture 6](./Lecture_6/notes.md)
