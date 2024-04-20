@@ -6,18 +6,20 @@
   - [x] DataType
   - [x] if_else
   - [x] Loop
-  - [ ] Overloading
+  - [x] Overloading
 - [x] Classes Intro
   - [x] Packages
   - [x] Modifiers
 - [x] DataStructure
   - [x] Array
+  - [ ] HashMap
+  - [ ] How HashMap works
 
 - [ ] Classes II
-  - [ ]  Modifier: static
-  - [ ]  Inheritance
+  - [x]  Modifier: static
+  - [x]  Inheritance
   - [ ]  Abstract
-  - [ ]  Polymorphism
+  - [x]  Polymorphism
 - [ ] Debugger
 
 ## Linux

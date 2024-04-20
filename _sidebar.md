@@ -4,3 +4,4 @@
 - [Lecture 4](./Lecture_4/notes.md)
 - [Lecture 5](./Lecture_5/notes.md)
 - [Lecture 6](./Lecture_6/notes.md)
+- [Lecture 7](./Lecture_7/notes.md)
