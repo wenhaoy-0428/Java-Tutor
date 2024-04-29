@@ -20,6 +20,33 @@ public class Main {
 }
 ```
 
+```
+Problem:
+  Sum(1 - 10)
+    10 + Sum(1 - 9)
+        9 + Sum(1-8)
+          8 + Sum(1-7)
+            ...
+            1 + Sum(1-1)
+```
+
+```java
+// Iteration / loop
+public class Main {
+  public static void main(String[] args) {
+    int result = sum(10);
+    System.out.println(result);
+  }
+  public static int sum(int k) {
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+}
+```
+
 ### Fibonacci Series
 
 The Fibonacci series is the sequence where each number is the sum of the previous two numbers of the sequence. The first two numbers of the Fibonacci series are 0 and 1 and are used to generate the Fibonacci series.
@@ -31,6 +58,26 @@ Fn = Fn-1 + Fn-2
 
 where F0 = 0; F1 = 1
 ```
+
+
+```java
+// 0 1 1 2 / 4
+int fib(n) {
+  if (n == 1) {
+    return 0;
+  }
+  if (n == 2) {
+    return 1;
+  }       
+  n = fib(n - 1) + fib(n - 2);
+  System.out.println(n);
+  return n;
+}
+```
+
+1. Recursion requires a terminate condition (`if`)
+2. Create a smaller problem on existing problem.
+3. Each step the outcome of the function is the same type.
 
 
 ### HashMap
@@ -55,6 +102,8 @@ public class Main {
     capitalCities.put("Germany", "Berlin");
     capitalCities.put("Norway", "Oslo");
     capitalCities.put("USA", "Washington DC");
+    capitalCities.put("USA", "New York");
+    capitalCities.put("USA", "Florida");
     System.out.println(capitalCities);
 
 
@@ -64,11 +113,32 @@ public class Main {
     }
   }
 }
-
 ```
 
+## Implementation
 
+Hash
+   1. A hash function can generate number based on whatever input.
+   2. The same input will always generate the same output.
+   3. Different input will normally generate different output.
 
+```java
+Hash(key) => hashValue; 
+
+["London", "Berlin", "Oslo", "Washington DC", "New York"];
+
+// England => London
+// Hash("England") => 0
+// USA => New York
+// Hash("USA") => 0
+
+["London", "Berlin", "New York", "", ""];
+[{England: London}, {German: Berlin}, {USA: New York}]
+```
+
+## Question Left
+
+1. How to solve collision during hashing the key.
 
 
 
