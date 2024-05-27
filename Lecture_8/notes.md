@@ -31,7 +31,7 @@ index = hashCode(key) % n
 }
 ```
 
-3. Place this object at index `idx`, **if no other object is presented there**.
+1. Place this object at index `idx`, **if no other object is presented there**.
 
 > 只有当`array[idx]`位置上没有其他元素占用时，当前的node才可以直接存入。
 
@@ -119,11 +119,22 @@ public class Main {
 }
 ```
 
-The `finally` statement lets you execute code, after `try...catch`, regardless of the result:
+The `finally` statement lets you execute code, after `try...catch`, regardless of the result
 
 
 ## Problem Assistance
 
+1. 
+Now that we're at least somewhat comfortable with reading from files in Java, we can do something a bit more usual - read information in from a file and create objects from it.
 
+The task here is to complete method readInData that should open a file corresponding to the file name given as a String parameter, and construct a List<Person>forming a simple database.
+The data will be newline separated, with the following format:
+
+```
+<type of person>
+<name>
+<additional data> 
+```
+Where the <type of person> will determine which subclass of Person to create, <name> is the person's name, and <additional data> is a series of lines of additional of information corresponding to the type of person. A student will have (in this order): the name of their degree, which year they're in. An academic will have what subject they teach. A programmer will have their favourite programming language. (This should be familiar!).
 
 ## External
