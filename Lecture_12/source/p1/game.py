@@ -4,50 +4,54 @@ from random import shuffle  # Just here to shuffle the deck
 prompts = {
     "main": {
         "optLen": 2,
-        "value":
+        "option":
             "Would you like to:\n"
             "1. Ask a question.\n"
-            "2. Guess a card.\n"
+            "2. Guess a card.",
+        "prompt":
             "Which option would you like? ",
     },
     "question": {
         "optLen": 6,
-        "value":
+        "option":
             "Which question would you like to ask?\n"
             "1. How many cards with a certain colour?\n"
             "2. How many cards with a certain shape?\n"
             "3. How many cards with a certain number?\n"
             "4. How many cards with a certain colour and number?\n"
             "5. How many cards with a certain shape and number?\n"
-            "6. How many cards with a certain colour and shape?\n"
-            "Which option would you like? ",
+            "6. How many cards with a certain colour and shape?",
+        "prompt":
+            "Which option would you like? "
     },
     "guess": {
 
     },
     "color": {
         "optLen": 4,
-        "value":
+        "option":
             "The colour options are:\n"
             "1. RED\n"
             "2. BLUE\n"
             "3. GREEN\n"
-            "4. YELLOW\n"
+            "4. YELLOW",
+        "prompt":
             "Which colour do you want? ",
     },
     "shape": {
         "optLen": 4,
-        "value":
+        "option":
             "The shape options are:\n"
             "1. HEXAGON\n"
             "2. CIRCLE\n"
             "3. DIAMOND\n"
-            "4. RHOMBUS\n"
+            "4. RHOMBUS",
+        "prompt":
             "Which shape do you want? ",
     },
     "number": {
         "optLen": 4,
-        "value": "Enter a number from 1-4 (inclusive): ",
+        "prompt": "Enter a number from 1-4 (inclusive): ",
     }
 }
 
@@ -55,11 +59,21 @@ prompts = {
 # Function to display a prompt and get user input
 def display_prompt(prompt):
     # Display the prompt message
-    option = int(input(prompts[prompt]["value"]))
-    # Check if the input is within the valid range
-    if option < 1 or option > prompts[prompt]["optLen"]:
-        raise ValueError
-    # Return the user's option
+    if "option" in prompts[prompt]:
+        print(prompts[prompt]["option"])
+    while True:
+        try:
+            option = int(input(prompts[prompt]["prompt"]))
+            # Check if the input is within the valid range
+            if option < 1 or option > prompts[prompt]["optLen"]:
+                raise ValueError
+            break
+        except ValueError:
+            print("This is not an option, try again")
+            if prompt == "main" or prompt == "question":
+                print(prompts[prompt]["option"])
+            # Display an error message if the input is invalid
+        # Return the user's option
     return option
 
 
@@ -178,6 +192,7 @@ def play(player):
                 guessed.append(card)
                 print("Good guess!")
         else:
+            print(f"The player does not have the card {card}.")
             num_wrong_guess += 1
 
     v9 = Vertex("guess", guess)
@@ -208,20 +223,15 @@ def play(player):
     while len(guessed) != 3:
         current_vertex = graph.get_vertex("main")
         while 1:
-            try:
-                # run the current vertex
-                option = current_vertex.run()
-                # move to the next vertex
-
-                if (not graph.has_next(current_vertex)):
-                    break
-                current_vertex = graph.move_to_next(current_vertex, option)
-
-            except ValueError:
-                print("Invalid input. Please try again.")
+            # run the current vertex
+            option = current_vertex.run()
+            # move to the next vertex
+            if (not graph.has_next(current_vertex)):
                 break
+            current_vertex = graph.move_to_next(current_vertex, option)
+            
     print(
-        f"Congratulations!\nIt took you {num_question_asked} questions and {num_wrong_guess} incorrect guesses.\nThe player's hand was: (1, RED, HEXAGON), (2, RED, HEXAGON), (3, RED, HEXAGON)")
+        f"Congratulations!\nIt took you {num_question_asked} questions and {num_wrong_guess} incorrect guesses.\nThe player's hand was: {guessed[0]}, {guessed[1]}, {guessed[2]}")
 
 
 if __name__ == "__main__":
